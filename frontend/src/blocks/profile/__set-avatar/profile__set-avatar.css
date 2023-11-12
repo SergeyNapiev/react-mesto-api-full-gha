@@ -1,0 +1,22 @@
+.profile__set-avatar {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .4s linear;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    z-index: 2;
+
+    margin: 0;
+    padding: 0;
+}
+
+.profile__set-avatar:hover {
+    background-image: url(../../../images/Set-avatar.png);
+    background-color: rgba(0, 0, 0, 0.8);
+}
