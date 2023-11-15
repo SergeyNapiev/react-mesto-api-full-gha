@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
@@ -8,6 +9,7 @@ const appRouter = require('./routes/index');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const regex = require('./models/regex');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
@@ -24,6 +26,8 @@ const {
   login,
   createUser,
 } = require('./controllers/users');
+
+app.use(requestLogger); // подключаем логгер запросов
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
@@ -44,6 +48,7 @@ app.post('/signup', celebrate({
 
 app.use(auth);
 app.use(appRouter);
+app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
 
 app.use((req, res, next) => {
