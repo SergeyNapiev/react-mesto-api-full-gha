@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.131.165
+IP 158.160.131.165
 
 Frontend https://sergeynapiev.nomoredomainsmonster.ru
 
