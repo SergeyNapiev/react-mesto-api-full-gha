@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const { celebrate, Joi, errors } = require('celebrate');
 const cors = require('cors');
+const helmet = require('helmet');
 
 const appRouter = require('./routes/index');
 const auth = require('./middlewares/auth');
@@ -17,6 +18,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
 
 const app = express();
 app.use(cors());
+app.use(helmet());
 const PORT = 3000;
 
 app.use(express.json());
