@@ -105,7 +105,7 @@ class Api {
 
 
 const api = new Api(
-  'http://localhost:3000',
+  'https://api.sergeynapiev.nomoredomainsmonster.ru',
 );
 
 export default api;
