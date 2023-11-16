@@ -11,6 +11,6 @@
 
 IP-адрес 158.160.131.165
 
-Frontend https://...
+Frontend https://sergeynapiev.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://api.sergeynapiev.nomoredomainsmonster.ru
